@@ -1,0 +1,11 @@
+name: 'Test action with bash'
+description: 'Test description'
+runs:
+  using: composite
+  steps:
+  - name: Permissions
+    run: chmod -R +x ${{ github.action_path }}/scripts
+    shell: bash
+  - name: Test script
+    run: ${{ github.action_path }}/scripts/script.sh
+    shell: bash
